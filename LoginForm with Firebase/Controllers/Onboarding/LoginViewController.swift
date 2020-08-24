@@ -23,6 +23,7 @@ class LoginViewController: UIViewController {
         
     }()
     
+    
     private let passWordField: UITextField = {
         
         let field = UITextField()
@@ -32,8 +33,20 @@ class LoginViewController: UIViewController {
     }()
     
     
-    
-    
+    // create header View
+    private let headerView: UIView = {
+        
+        let header = UIView()
+        
+        // 指定した領域内でのみ画像を表示する
+        header.clipsToBounds = true
+        
+        // UIView()に背景画像を追加する
+        let backgroundImageView = UIImageView(image: UIImage(named: "bg"))
+        header.addSubview(backgroundImageView)
+        
+        return header
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +57,24 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+    
     // 作ったoutletの位置を指定する
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        // headerView
+        headerView.frame = CGRect(
+            x: 0,
+            y: 0,
+            width: view.frame.width,
+            height: view.frame.height / 3
+        )
+        
+        // textField
         usernameEmailField.frame = CGRect(
             x: 25,
-            y: 50,
+            y: headerView.bottom + 20,
             width: view.frame.width - 50,
             height: 52
         )
@@ -62,15 +86,23 @@ class LoginViewController: UIViewController {
             height: 52
         )
         
+
+        
+        
         
     }
     
     
     private func addSubViews() {
         
-        // textFieldを追加する
+        // add view to headerView
+        view.addSubview(headerView)
+        
+        // add view to textField
         view.addSubview(usernameEmailField)
         view.addSubview(passWordField)
+        
+
     }
     
     
