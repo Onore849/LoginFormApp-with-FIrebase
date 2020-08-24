@@ -18,6 +18,12 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.placeholder = "username or email ..."
         
+        // replace returnkey to nextKey
+        field.returnKeyType = .next
+        
+        field.leftViewMode = .always
+        
+        
         
         return field
         
@@ -42,7 +48,7 @@ class LoginViewController: UIViewController {
         header.clipsToBounds = true
         
         // UIView()に背景画像を追加する
-        let backgroundImageView = UIImageView(image: UIImage(named: "bg"))
+        let backgroundImageView = UIImageView(image: UIImage(named: "gradient"))
         header.addSubview(backgroundImageView)
         
         return header
@@ -57,7 +63,42 @@ class LoginViewController: UIViewController {
         
     }
     
-    
+    private func configureHeaderView() {
+        
+        // headerView内のbackground画像が１つ以外ならエラーが出る
+        guard headerView.subviews.count == 1 else {
+
+            return
+        }
+        
+        // addsubviewは値の追加を表すためoptional型で帰ってくる
+        // guard let 文でアンラップする
+        guard let backgroundView = headerView.subviews.first else {
+
+            return
+        }
+        
+//        print(type(of: backgroundView))
+        
+        
+        backgroundView.frame = headerView.bounds
+        
+        // add instagram logo
+        let imageView = UIImageView(image: UIImage(named: "logo3"))
+        headerView.addSubview(imageView)
+        
+        imageView.contentMode = .scaleAspectFit
+        
+        
+        imageView.frame = CGRect(
+            x: headerView.frame.width/4,
+            y: view.safeAreaInsets.top,
+            width: headerView.frame.width/2,
+            height: headerView.frame.height - view.safeAreaInsets.top
+        )
+        
+        
+    }
     
     // 作ったoutletの位置を指定する
     override func viewDidLayoutSubviews() {
@@ -74,7 +115,7 @@ class LoginViewController: UIViewController {
         // textField
         usernameEmailField.frame = CGRect(
             x: 25,
-            y: headerView.bottom + 20,
+            y: 20,
             width: view.frame.width - 50,
             height: 52
         )
@@ -86,9 +127,8 @@ class LoginViewController: UIViewController {
             height: 52
         )
         
-
         
-        
+        configureHeaderView()
         
     }
     
