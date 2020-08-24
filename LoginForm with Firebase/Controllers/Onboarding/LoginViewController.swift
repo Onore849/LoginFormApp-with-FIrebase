@@ -10,20 +10,40 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    struct Constants {
+        
+        static let cornerRadius: CGFloat = 8.0
+    }
+    
+    
     // create outlet parts
     
-    // create textField
+    //MARK: - create TextFIeld
     private let usernameEmailField: UITextField = {
        
         let field = UITextField()
         field.placeholder = "username or email ..."
         
-        // replace returnkey to nextKey
+        // change returnkey to nextKey
         field.returnKeyType = .next
         
+        // ??
         field.leftViewMode = .always
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
         
+        // ??
+        field.autocapitalizationType = .none
+        field.autocorrectionType = .no
         
+        // ??
+        field.layer.masksToBounds = true
+        
+        // design textField
+        field.layer.cornerRadius = Constants.cornerRadius
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.secondaryLabel.cgColor
+        
+        field.backgroundColor = .secondarySystemBackground
         
         return field
         
@@ -35,11 +55,32 @@ class LoginViewController: UIViewController {
         let field = UITextField()
         field.placeholder = "password"
         
+        // change returnkey to nextKey
+        field.returnKeyType = .next
+        
+        // ??
+        field.leftViewMode = .always
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        
+        // ??
+        field.autocapitalizationType = .none
+        field.autocorrectionType = .no
+        
+        // ??
+        field.layer.masksToBounds = true
+        
+        // design textField
+        field.layer.cornerRadius = Constants.cornerRadius
+        field.layer.borderWidth = 1.0
+        field.layer.borderColor = UIColor.secondaryLabel.cgColor
+        
+        field.backgroundColor = .secondarySystemBackground
+        
         return field
     }()
     
     
-    // create header View
+    // MARK: - create header View
     private let headerView: UIView = {
         
         let header = UIView()
@@ -53,7 +94,9 @@ class LoginViewController: UIViewController {
         
         return header
     }()
-
+    
+    
+    // MARK:- display
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,6 +106,8 @@ class LoginViewController: UIViewController {
         
     }
     
+    
+// MARK:- headerViewの細かい設定 :logo(iamgeView)を追加する
     private func configureHeaderView() {
         
         // headerView内のbackground画像が１つ以外ならエラーが出る
@@ -100,7 +145,7 @@ class LoginViewController: UIViewController {
         
     }
     
-    // 作ったoutletの位置を指定する
+    //MARK:- 作ったoutletの位置を指定する
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -133,6 +178,7 @@ class LoginViewController: UIViewController {
     }
     
     
+// MARK:- viewにそれぞれのパーツを実装する
     private func addSubViews() {
         
         // add view to headerView
