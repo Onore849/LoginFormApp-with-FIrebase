@@ -16,6 +16,7 @@
 		F8C24D2E24F35F4000F2B63A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C24D2D24F35F4000F2B63A /* HomeViewController.swift */; };
 		F8C24D3124F35FB200F2B63A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C24D3024F35FB200F2B63A /* LoginViewController.swift */; };
 		F8C24D3324F35FCB00F2B63A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C24D3224F35FCA00F2B63A /* RegistrationViewController.swift */; };
+		F8C24D3524F3613C00F2B63A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F8C24D3424F3613C00F2B63A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		F8C24D2D24F35F4000F2B63A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F8C24D3024F35FB200F2B63A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F8C24D3224F35FCA00F2B63A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		F8C24D3424F3613C00F2B63A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F8DA2D95C6824ED7C19BD272 /* Pods-LoginForm with Firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoginForm with Firebase.release.xcconfig"; path = "Target Support Files/Pods-LoginForm with Firebase/Pods-LoginForm with Firebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 			children = (
 				F8C24D1324F35B9200F2B63A /* AppDelegate.swift */,
 				F8C24D1524F35B9200F2B63A /* SceneDelegate.swift */,
+				F8C24D3424F3613C00F2B63A /* GoogleService-Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8C24D2024F35B9400F2B63A /* LaunchScreen.storyboard in Resources */,
+				F8C24D3524F3613C00F2B63A /* GoogleService-Info.plist in Resources */,
 				F8C24D1D24F35B9400F2B63A /* Assets.xcassets in Resources */,
 				F8C24D1B24F35B9200F2B63A /* Main.storyboard in Resources */,
 			);
@@ -419,7 +423,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zawawa.LoginForm-with-Firebase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -438,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.zawawa.LoginForm-with-Firebase";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
