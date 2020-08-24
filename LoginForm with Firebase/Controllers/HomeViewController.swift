@@ -7,24 +7,36 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        handleNotAuthenticated()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    // ログインしてなかったらログイン画面に遷移させる処理
+    private func handleNotAuthenticated() {
+        
+        // check auth status
+        // .currentUserは現在ログインしているUserを取得できる
+        
+        if Auth.auth().currentUser == nil {
+            
+            let loginVC = LoginViewController()
+            
+            loginVC.modalPresentationStyle = .fullScreen
+            
+            present(loginVC, animated: true)
+            
+        }
+        
+        
+        
     }
-    */
 
 }
