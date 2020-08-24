@@ -1,0 +1,6 @@
+framework module Pods_LoginForm_with_Firebase {
+  umbrella header "Pods-LoginForm with Firebase-umbrella.h"
+
+  export *
+  module * { export * }
+}
