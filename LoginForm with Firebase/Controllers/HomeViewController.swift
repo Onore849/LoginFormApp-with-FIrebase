@@ -13,7 +13,13 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    // 画面がロードされてから実行される処理
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         handleNotAuthenticated()
         
     }
@@ -34,9 +40,7 @@ class HomeViewController: UIViewController {
             present(loginVC, animated: true)
             
         }
-        
-        
-        
+
     }
 
 }
